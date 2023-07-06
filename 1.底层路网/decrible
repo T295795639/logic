@@ -1,0 +1,17 @@
+底层路网
+space-P模型 以“画的”节点(站点+路口)为拓扑节点
+space-R模型 继续将道路抽象成节点
+
+最终生成space-R模型道路路网
+
+
+步骤
+drawRoad.json ---> road_sta_end.json+"road_sta_end_erro.json"(损失)  road   path--->[sta1, sta2]
+
+space-P 站点作为节点
+space-R 边作为节点
+
+
+
+
+

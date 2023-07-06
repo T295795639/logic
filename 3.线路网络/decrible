@@ -1,0 +1,8 @@
+当时画图是根据gps轨迹把两个站点连一起
+
+[station1,......,station2]
+
+line ->  [station1,.......,station2]
+
+构成 底层到line的映射
+

@@ -30,6 +30,8 @@ def getTimeList(start, end, step):
         start += dt.timedelta(hours=step)
     return timeL
 
+
+# 重新写 不用时间参数 遍历一遍 将所有数据转化
 def getJson_t_section(t1='2021-09-09 10:00:00', t2='2021-09-09 11:00:00'):
     # 输入时间,获得json块 时间_sectionId: [记录]
     dic = defaultdict(list)
@@ -57,7 +59,3 @@ if __name__ == '__main__':
     ans = {}
     ans['2021-09-09 10:00:00->2021-09-09 11:00:00'] = getJson_t_section('2021-09-09 10:00:00', '2021-09-09 11:00:00')
     json_dump(ans, r'D:\pycharmProject\logic\getJson\json\dic_t_stationId_data.json')
-
-
-
-                                                                                                                                                                                                                                                        z` 12   

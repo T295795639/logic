@@ -629,7 +629,6 @@ def getStationCluLink1(station2lables):
     print(links)
     return list(links)
 
-
 # 簇之间生成方式2
 def getStationCluLink2(station2lables, label2station):
     # 簇之间连接的生成方式2, 试着用road_sta_end生成连接关系
@@ -869,7 +868,6 @@ def getNodeWeight_speed(label2roads, startTime, endTime):
         dic2[label] = aveSpeed
     dic2 = dataWash(dataDic=dic2, isDeletZero=True)
     # json_dump(dic2, 'tempData/dic2.json')
-
     return dic2
 
 # 计算每个节点的行驶时长
@@ -919,6 +917,7 @@ def getNodeWeight_spenTime(label2roads, startTime, endTime):
     dic2 = dataWash(dataDic=dic2, isDeletZero=True)
     # json_dump(dic2, 'tempData/dic2.json')
     return dic2
+
 
 # 计算每个节点下的车流
 def getNodeWeight_flow(label2stations, startTime, endTime):
@@ -971,27 +970,12 @@ def getNodeWeight_length(label2roads, startTime, endTime):
         dic2[label] = roadLength
     dic2 = dataWash(dataDic=dic2, isDeletZero=True)
     # json_dump(dic2, 'tempData/dic2.json')
-
     return dic2
+
 
 if __name__ == '__main__':
 
     dic = getNodeWeight_flow(label2stations=json_load(r'D:\pycharmProject\busAnalyze-backend\data\lable2stations.json'), startTime='2021-09-09 10:00:00', endTime='2021-09-09 11:00:00')
     print(dic)
-
     pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

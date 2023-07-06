@@ -31,7 +31,6 @@ def getTimeList(start, end, step):
         start = tempTime
     return timeL
 
-
 def getJson_t_section(t1='2021-09-09 10:00:00', t2='2021-09-09 11:00:00'):
     # 输入时间,获得json块 时间_sectionId: [记录]
     dic = defaultdict(list)
@@ -54,7 +53,6 @@ def getJson_t_section(t1='2021-09-09 10:00:00', t2='2021-09-09 11:00:00'):
             dic[sectionId][i]["speed"] = getSpeed(data["path"])
             dic[sectionId][i]["length"] = getLength(data["path"])
     return dic
-
 
 if __name__ == '__main__':
     ans = {}

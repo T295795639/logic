@@ -32,14 +32,39 @@ def getTimeList(start, end, step):
 
 
 # 重新写 不用时间参数 遍历一遍 将所有数据转化
-def getJson_t_section(t1='2021-09-09 10:00:00', t2='2021-09-09 11:00:00'):
+# def getJson_t_section(t1='2021-09-09 10:00:00', t2='2021-09-09 11:00:00'):
+#     # 输入时间,获得json块 时间_sectionId: [记录]
+#     dic = defaultdict(list)
+#     jsonList = []
+#     fNameL, pathL = getPath(r'D:\pycharmProject\logic\dataBase\section_driving\station_parkings')
+#     for fName, path in zip(fNameL, pathL):
+#         df = pd.read_csv(path)
+#         # 筛选 时间粒度 1小时
+#         df = timeFilter(df, t1, t2)
+#         valuesList = df.values.tolist()
+#         for i, value in enumerate(valuesList):
+#             valuesList[i][2] = json.loads(valuesList[i][2].replace("'", '"'))
+#         jsonList = [dict(zip(df.columns.tolist(), value)) for value in valuesList]
+#         for item in jsonList:
+#             dic[item['stationId']].append(item)
+#
+#     for sectionId, dataL in dic.items():
+#         for i, data in enumerate(dataL):
+#             dic[sectionId][i]["spentTime"] = timeSub(data["end_date_time"], data["start_date_time"])
+#
+#     return dic
+
+
+# 重新写 不用时间参数 遍历一遍 将所有数据转化 time.sectionId.{}
+def getJson_t_section():
+    t1, t2 = '2021-09-09 10:00:00', '2021-09-09 11:00:00'
     # 输入时间,获得json块 时间_sectionId: [记录]
     dic = defaultdict(list)
     jsonList = []
     fNameL, pathL = getPath(r'D:\pycharmProject\logic\dataBase\section_driving\station_parkings')
     for fName, path in zip(fNameL, pathL):
         df = pd.read_csv(path)
-        # 筛选 时间粒度 1小时
+        # 筛选 时间
         df = timeFilter(df, t1, t2)
         valuesList = df.values.tolist()
         for i, value in enumerate(valuesList):
@@ -47,11 +72,9 @@ def getJson_t_section(t1='2021-09-09 10:00:00', t2='2021-09-09 11:00:00'):
         jsonList = [dict(zip(df.columns.tolist(), value)) for value in valuesList]
         for item in jsonList:
             dic[item['stationId']].append(item)
-
     for sectionId, dataL in dic.items():
         for i, data in enumerate(dataL):
             dic[sectionId][i]["spentTime"] = timeSub(data["end_date_time"], data["start_date_time"])
-
     return dic
 
 

@@ -63,11 +63,3 @@ if __name__ == '__main__':
         print(key, i, 'done', end=' ', flush=True)
     json_dump(ans, r'D:\pycharmProject\logic\getJson\json\dic_t_sectionId_data.json')
 
-
-
-
-
-
-
-
-
